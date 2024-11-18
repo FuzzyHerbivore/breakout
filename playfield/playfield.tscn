@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://coppms14t6yjl"]
+
+[ext_resource type="Texture2D" uid="uid://m3jm2kdcnybn" path="res://assets/spritesheet.png" id="1_0eqpw"]
+[ext_resource type="PackedScene" uid="uid://du0cifef5njw5" path="res://playfield/boundary_side.tscn" id="2_anxff"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvmfq"]
+size = Vector2(160, 6)
+
+[node name="Playfield" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_0eqpw")
+region_enabled = true
+region_rect = Rect2(0, 0, 160, 144)
+
+[node name="BoundarySideLeft" parent="." instance=ExtResource("2_anxff")]
+position = Vector2(-76, 3)
+
+[node name="BoundarySideRight" parent="." instance=ExtResource("2_anxff")]
+position = Vector2(76, 3)
+
+[node name="BoundaryTop" type="StaticBody2D" parent="."]
+position = Vector2(0, -69)
+
+[node name="Sprite2D" type="Sprite2D" parent="BoundaryTop"]
+texture = ExtResource("1_0eqpw")
+region_enabled = true
+region_rect = Rect2(0, 146, 160, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryTop"]
+shape = SubResource("RectangleShape2D_dvmfq")

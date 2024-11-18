@@ -1,12 +1,180 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfm5wnfio0yy"]
+[gd_scene load_steps=5 format=3 uid="uid://cfm5wnfio0yy"]
 
-[ext_resource type="Theme" uid="uid://di1yw3kpy53he" path="res://assets/theme.tres" id="1_b84o7"]
+[ext_resource type="PackedScene" uid="uid://coppms14t6yjl" path="res://playfield/playfield.tscn" id="1_mk6mh"]
+[ext_resource type="PackedScene" uid="uid://cy0lkqoslnxq0" path="res://paddle/paddle.tscn" id="2_u6yk7"]
+[ext_resource type="PackedScene" uid="uid://bxuea01rk0dmp" path="res://ball/ball.tscn" id="3_i4qiy"]
+[ext_resource type="PackedScene" uid="uid://4cpbd2ffluyg" path="res://block/block.tscn" id="4_xoigr"]
 
 [node name="Game" type="Node"]
 
-[node name="World" type="Node2D" parent="."]
+[node name="Playfield" parent="." instance=ExtResource("1_mk6mh")]
 
-[node name="GUIContainer" type="MarginContainer" parent="."]
+[node name="Paddle" parent="." instance=ExtResource("2_u6yk7")]
+position = Vector2(0, 64)
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme = ExtResource("1_b84o7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Ball" parent="." instance=ExtResource("3_i4qiy")]
+linear_velocity = Vector2(10, 10)
+
+[node name="Blocks Row 1" type="Node2D" parent="."]
+position = Vector2(0, -51)
+
+[node name="Block" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
+position = Vector2(-66, 0)
+
+[node name="Block2" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
+position = Vector2(-54, 0)
+
+[node name="Block3" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
+position = Vector2(-42, 0)
+
+[node name="Block4" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
+position = Vector2(-30, 0)
+
+[node name="Block5" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
+position = Vector2(-18, 0)
+
+[node name="Block6" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
+position = Vector2(-6, 0)
+
+[node name="Block7" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
+position = Vector2(6, 0)
+
+[node name="Block8" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
+position = Vector2(18, 0)
+
+[node name="Block9" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
+position = Vector2(30, 0)
+
+[node name="Block10" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
+position = Vector2(42, 0)
+
+[node name="Block11" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
+position = Vector2(54, 0)
+
+[node name="Block12" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
+position = Vector2(66, 0)
+
+[node name="Blocks Row 2" type="Node2D" parent="."]
+position = Vector2(0, -45)
+
+[node name="Block" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
+position = Vector2(-66, 0)
+
+[node name="Block2" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
+position = Vector2(-54, 0)
+
+[node name="Block3" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
+position = Vector2(-42, 0)
+
+[node name="Block4" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
+position = Vector2(-30, 0)
+
+[node name="Block5" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
+position = Vector2(-18, 0)
+
+[node name="Block6" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
+position = Vector2(-6, 0)
+
+[node name="Block7" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
+position = Vector2(6, 0)
+
+[node name="Block8" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
+position = Vector2(18, 0)
+
+[node name="Block9" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
+position = Vector2(30, 0)
+
+[node name="Block10" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
+position = Vector2(42, 0)
+
+[node name="Block11" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
+position = Vector2(54, 0)
+
+[node name="Block12" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
+position = Vector2(66, 0)
+
+[node name="Blocks Row 3" type="Node2D" parent="."]
+position = Vector2(0, -39)
+
+[node name="Block" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
+position = Vector2(-66, 0)
+
+[node name="Block2" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
+position = Vector2(-54, 0)
+
+[node name="Block3" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
+position = Vector2(-42, 0)
+
+[node name="Block4" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
+position = Vector2(-30, 0)
+
+[node name="Block5" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
+position = Vector2(-18, 0)
+
+[node name="Block6" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
+position = Vector2(-6, 0)
+
+[node name="Block7" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
+position = Vector2(6, 0)
+
+[node name="Block8" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
+position = Vector2(18, 0)
+
+[node name="Block9" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
+position = Vector2(30, 0)
+
+[node name="Block10" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
+position = Vector2(42, 0)
+
+[node name="Block11" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
+position = Vector2(54, 0)
+
+[node name="Block12" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
+position = Vector2(66, 0)
+
+[node name="Blocks Row 4" type="Node2D" parent="."]
+position = Vector2(0, -33)
+
+[node name="Block" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
+position = Vector2(-66, 0)
+
+[node name="Block2" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
+position = Vector2(-54, 0)
+
+[node name="Block3" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
+position = Vector2(-42, 0)
+
+[node name="Block4" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
+position = Vector2(-30, 0)
+
+[node name="Block5" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
+position = Vector2(-18, 0)
+
+[node name="Block6" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
+position = Vector2(-6, 0)
+
+[node name="Block7" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
+position = Vector2(6, 0)
+
+[node name="Block8" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
+position = Vector2(18, 0)
+
+[node name="Block9" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
+position = Vector2(30, 0)
+
+[node name="Block10" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
+position = Vector2(42, 0)
+
+[node name="Block11" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
+position = Vector2(54, 0)
+
+[node name="Block12" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
+position = Vector2(66, 0)

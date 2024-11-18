@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxuea01rk0dmp"]
+
+[ext_resource type="Texture2D" uid="uid://m3jm2kdcnybn" path="res://assets/spritesheet.png" id="1_en6j6"]
+[ext_resource type="Script" path="res://ball/ball.gd" id="1_i4htl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2j7rb"]
+radius = 4.0
+
+[node name="Ball" type="RigidBody2D"]
+lock_rotation = true
+script = ExtResource("1_i4htl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_en6j6")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 294, 7, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2j7rb")
+
+[node name="Camera2D" type="Camera2D" parent="."]

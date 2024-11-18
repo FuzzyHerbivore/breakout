@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://4cpbd2ffluyg"]
+
+[ext_resource type="Texture2D" uid="uid://m3jm2kdcnybn" path="res://assets/spritesheet.png" id="1_umee3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3l3rt"]
+size = Vector2(12, 6)
+
+[node name="Block" type="StaticBody2D"]
+position = Vector2(-66, -51)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_umee3")
+region_enabled = true
+region_rect = Rect2(0, 311, 12, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3l3rt")
