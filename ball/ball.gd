@@ -1,15 +1,15 @@
 extends RigidBody2D
 
 
-@export var initial_velocity = 100.0
+var direction = Vector2.ZERO
+var speed = 0.0
 
-var _velocity = Vector2.ONE
 
-
-func _process(delta: float) -> void:
-	var direction = Vector2(0.0, 1.0)
-
-	var collision = move_and_collide(_velocity * initial_velocity * delta)
+func _process(delta):
+	var collision = move_and_collide(direction * speed * delta)
 
 	if collision != null:
-		_velocity = _velocity.bounce(collision.get_normal())
+		var collider = collision.get_collider()
+		if collider.has_method("on_collision_with_ball"):
+			collider.on_collision_with_ball()
+		direction = direction.bounce(collision.get_normal())
