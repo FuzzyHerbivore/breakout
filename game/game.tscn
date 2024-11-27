@@ -8,8 +8,7 @@
 [ext_resource type="Script" path="res://ball/ball_manager.gd" id="5_5d5ps"]
 [ext_resource type="Script" path="res://game/ball_despawner.gd" id="6_s0xq4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8778p"]
-size = Vector2(160, 20)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gnlbk"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_rgnmi")
@@ -26,7 +25,7 @@ script = ExtResource("5_5d5ps")
 ball_scene = ExtResource("3_i4qiy")
 
 [node name="Blocks Row 1" type="Node2D" parent="."]
-position = Vector2(0, -51)
+position = Vector2(0, -48)
 
 [node name="Block" parent="Blocks Row 1" instance=ExtResource("4_xoigr")]
 position = Vector2(-66, 0)
@@ -65,7 +64,7 @@ position = Vector2(54, 0)
 position = Vector2(66, 0)
 
 [node name="Blocks Row 2" type="Node2D" parent="."]
-position = Vector2(0, -45)
+position = Vector2(0, -42)
 
 [node name="Block" parent="Blocks Row 2" instance=ExtResource("4_xoigr")]
 position = Vector2(-66, 0)
@@ -104,7 +103,7 @@ position = Vector2(54, 0)
 position = Vector2(66, 0)
 
 [node name="Blocks Row 3" type="Node2D" parent="."]
-position = Vector2(0, -39)
+position = Vector2(0, -36)
 
 [node name="Block" parent="Blocks Row 3" instance=ExtResource("4_xoigr")]
 position = Vector2(-66, 0)
@@ -143,7 +142,7 @@ position = Vector2(54, 0)
 position = Vector2(66, 0)
 
 [node name="Blocks Row 4" type="Node2D" parent="."]
-position = Vector2(0, -33)
+position = Vector2(0, -30)
 
 [node name="Block" parent="Blocks Row 4" instance=ExtResource("4_xoigr")]
 position = Vector2(-66, 0)
@@ -196,7 +195,8 @@ collision_mask = 32
 script = ExtResource("6_s0xq4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BallDespawner"]
-shape = SubResource("RectangleShape2D_8778p")
+position = Vector2(0, -9)
+shape = SubResource("WorldBoundaryShape2D_gnlbk")
 
 [connection signal="collided_with_top" from="Playfield/BoundaryTop" to="." method="_on_boundary_top_collided_with_top"]
 [connection signal="ball_out" from="BallDespawner" to="." method="_on_ball_despawner_ball_out"]
