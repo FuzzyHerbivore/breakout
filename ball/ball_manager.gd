@@ -4,6 +4,7 @@ extends Marker2D
 @export var ball_scene: PackedScene
 @export var normal_speed = 100.0
 @export var fast_speed = 150.0
+@export var direction_spread_degrees = 90.0
 
 
 enum BallMode {
@@ -27,7 +28,10 @@ func spawn_ball():
 		return
 
 	var ball = ball_scene.instantiate()
-	var direction_radians = randf_range(0, PI)
+	var direction_radians = randf_range(
+		PI / 2.0 + deg_to_rad(direction_spread_degrees / 2.0),
+		PI / 2.0 - deg_to_rad(direction_spread_degrees / 2.0)
+	)
 	var direction = Vector2.from_angle(direction_radians)
 
 	ball.speed = normal_speed
