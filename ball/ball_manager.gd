@@ -41,7 +41,6 @@ func spawn_ball():
 
 
 func _set_ball_speed(speed):
-	print("Ball speed is: %s" % speed)
-	var ball = get_child(0)
-	if ball != null:
-		ball.speed = fast_speed
+	var balls = get_children()
+	if not balls.is_empty():
+		balls.front().speed = fast_speed
