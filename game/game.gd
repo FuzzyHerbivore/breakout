@@ -8,7 +8,24 @@ enum GameMode {
 }
 
 
-@export var extra_lives_start = 5
+@export var extra_lives_start = 3
+
+
+var _game_mode = GameMode.NORMAL:
+	set(value):
+		if _game_mode == value:
+			return
+
+		_game_mode = value
+		match _game_mode:
+			GameMode.NORMAL:
+				%BallManager.ball_mode = %BallManager.BallMode.NORMAL
+				%Paddle.paddle_mode = %Paddle.PaddleMode.LONG
+			GameMode.HECTIC:
+				%BallManager.ball_mode = %BallManager.BallMode.FAST
+				%Paddle.paddle_mode = %Paddle.PaddleMode.SHORT
+			GameMode.GAME_OVER:
+				print("You got %s points!" % _score) # TODO
 
 
 var _extra_lives = 0:
@@ -32,10 +49,14 @@ func _ready() -> void:
 
 
 func _reset_game():
-	_game_mode = GameMode.NORMAL
-	%Paddle.position = _paddle_start_position
 	_score = 0
 	_extra_lives = extra_lives_start
+	_reset_level()
+
+
+func _reset_level():
+	_game_mode = GameMode.NORMAL
+	%Paddle.position = _paddle_start_position
 
 
 func _process(_delta):
@@ -45,23 +66,6 @@ func _process(_delta):
 	else:
 		if Input.is_action_just_pressed("start"):
 			%BallManager.spawn_ball()
-
-
-var _game_mode = GameMode.NORMAL:
-	set(value):
-		if _game_mode == value:
-			return
-
-		_game_mode = value
-		match _game_mode:
-			GameMode.NORMAL:
-				%BallManager.ball_mode = %BallManager.BallMode.NORMAL
-				%Paddle.paddle_mode = %Paddle.PaddleMode.LONG
-			GameMode.HECTIC:
-				%BallManager.ball_mode = %BallManager.BallMode.FAST
-				%Paddle.paddle_mode = %Paddle.PaddleMode.SHORT
-			GameMode.GAME_OVER:
-				pass # TODO
 
 
 func _on_boundary_top_collided_with_top():
@@ -74,3 +78,7 @@ func _on_ball_despawner_ball_out():
 		_game_mode = GameMode.GAME_OVER
 	else:
 		_game_mode = GameMode.NORMAL
+
+
+func _on_block_manager_points_awarded(points):
+	_score += points
