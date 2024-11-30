@@ -5,6 +5,11 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngx3s"]
 
 [resource]
+HorizontalMarginContainer/base_type = &"MarginContainer"
+HorizontalMarginContainer/constants/margin_bottom = 0
+HorizontalMarginContainer/constants/margin_left = 4
+HorizontalMarginContainer/constants/margin_right = 4
+HorizontalMarginContainer/constants/margin_top = 0
 Label/colors/font_color = Color(0.188067, 0.384451, 0.188067, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)

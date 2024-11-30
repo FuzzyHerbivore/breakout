@@ -197,32 +197,36 @@ anchor_right = 1.0
 offset_bottom = 28.0
 grow_horizontal = 2
 
-[node name="ExtraLivesHBoxContainer" type="HBoxContainer" parent="GUI/MarginContainer"]
+[node name="ExtraLivesMarginContainer" type="MarginContainer" parent="GUI/MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"HorizontalMarginContainer"
+
+[node name="ExtraLivesHBoxContainer" type="HBoxContainer" parent="GUI/MarginContainer/ExtraLivesMarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="GUI/MarginContainer/ExtraLivesHBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="GUI/MarginContainer/ExtraLivesMarginContainer/ExtraLivesHBoxContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_i0usx")
 stretch_mode = 3
 
-[node name="ExtraLivesLabel" type="Label" parent="GUI/MarginContainer/ExtraLivesHBoxContainer"]
+[node name="ExtraLivesLabel" type="Label" parent="GUI/MarginContainer/ExtraLivesMarginContainer/ExtraLivesHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "5"
 
-[node name="ScoreHBoxContainer" type="HBoxContainer" parent="GUI/MarginContainer"]
+[node name="ScoreMarginContainer" type="MarginContainer" parent="GUI/MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"HorizontalMarginContainer"
+
+[node name="ScoreHBoxContainer" type="HBoxContainer" parent="GUI/MarginContainer/ScoreMarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="ScoreTitleLabel" type="Label" parent="GUI/MarginContainer/ScoreHBoxContainer"]
-layout_mode = 2
-text = "P"
-
-[node name="ScoreLabel" type="Label" parent="GUI/MarginContainer/ScoreHBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="GUI/MarginContainer/ScoreMarginContainer/ScoreHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "00000"
