@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cfm5wnfio0yy"]
+[gd_scene load_steps=11 format=3 uid="uid://cfm5wnfio0yy"]
 
 [ext_resource type="PackedScene" uid="uid://coppms14t6yjl" path="res://playfield/playfield.tscn" id="1_mk6mh"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_rgnmi"]
 [ext_resource type="PackedScene" uid="uid://cy0lkqoslnxq0" path="res://paddle/paddle.tscn" id="2_u6yk7"]
 [ext_resource type="PackedScene" uid="uid://bxuea01rk0dmp" path="res://ball/ball.tscn" id="3_i4qiy"]
-[ext_resource type="PackedScene" uid="uid://4cpbd2ffluyg" path="res://block/block.tscn" id="4_xoigr"]
 [ext_resource type="Script" path="res://ball/ball_manager.gd" id="5_5d5ps"]
-[ext_resource type="Script" path="res://block/blocks_manager.gd" id="6_dlkf3"]
+[ext_resource type="PackedScene" uid="uid://be7x0dknveceg" path="res://levels/level_manager.tscn" id="6_7xh28"]
 [ext_resource type="Script" path="res://game/ball_despawner.gd" id="6_s0xq4"]
 [ext_resource type="Texture2D" uid="uid://m3jm2kdcnybn" path="res://assets/spritesheet.png" id="7_w7oon"]
 
@@ -33,190 +32,8 @@ position = Vector2(80, 72)
 script = ExtResource("5_5d5ps")
 ball_scene = ExtResource("3_i4qiy")
 
-[node name="BlockManager" type="Node2D" parent="."]
+[node name="LevelManager" parent="." instance=ExtResource("6_7xh28")]
 unique_name_in_owner = true
-position = Vector2(80, 24)
-script = ExtResource("6_dlkf3")
-
-[node name="Block" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-66, 0)
-point_value = 40
-
-[node name="Block2" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-54, 0)
-point_value = 40
-
-[node name="Block3" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-42, 0)
-point_value = 40
-
-[node name="Block4" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-30, 0)
-point_value = 40
-
-[node name="Block5" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-18, 0)
-point_value = 40
-
-[node name="Block6" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-6, 0)
-point_value = 40
-
-[node name="Block7" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(6, 0)
-point_value = 40
-
-[node name="Block8" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(18, 0)
-point_value = 40
-
-[node name="Block9" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(30, 0)
-point_value = 40
-
-[node name="Block10" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(42, 0)
-point_value = 40
-
-[node name="Block11" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(54, 0)
-point_value = 40
-
-[node name="Block12" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(66, 0)
-point_value = 40
-
-[node name="Block13" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-66, 6)
-point_value = 30
-
-[node name="Block14" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-54, 6)
-point_value = 30
-
-[node name="Block15" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-42, 6)
-point_value = 30
-
-[node name="Block16" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-30, 6)
-point_value = 30
-
-[node name="Block17" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-18, 6)
-point_value = 30
-
-[node name="Block18" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-6, 6)
-point_value = 30
-
-[node name="Block19" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(6, 6)
-point_value = 30
-
-[node name="Block20" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(18, 6)
-point_value = 30
-
-[node name="Block21" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(30, 6)
-point_value = 30
-
-[node name="Block22" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(42, 6)
-point_value = 30
-
-[node name="Block23" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(54, 6)
-point_value = 30
-
-[node name="Block24" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(66, 6)
-point_value = 30
-
-[node name="Block25" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-66, 12)
-point_value = 20
-
-[node name="Block26" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-54, 12)
-point_value = 20
-
-[node name="Block27" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-42, 12)
-point_value = 20
-
-[node name="Block28" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-30, 12)
-point_value = 20
-
-[node name="Block29" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-18, 12)
-point_value = 20
-
-[node name="Block30" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-6, 12)
-point_value = 20
-
-[node name="Block31" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(6, 12)
-point_value = 20
-
-[node name="Block32" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(18, 12)
-point_value = 20
-
-[node name="Block33" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(30, 12)
-point_value = 20
-
-[node name="Block34" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(42, 12)
-point_value = 20
-
-[node name="Block35" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(54, 12)
-point_value = 20
-
-[node name="Block36" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(66, 12)
-point_value = 20
-
-[node name="Block37" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-66, 18)
-
-[node name="Block38" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-54, 18)
-
-[node name="Block39" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-42, 18)
-
-[node name="Block40" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-30, 18)
-
-[node name="Block41" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-18, 18)
-
-[node name="Block42" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(-6, 18)
-
-[node name="Block43" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(6, 18)
-
-[node name="Block44" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(18, 18)
-
-[node name="Block45" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(30, 18)
-
-[node name="Block46" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(42, 18)
-
-[node name="Block47" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(54, 18)
-
-[node name="Block48" parent="BlockManager" instance=ExtResource("4_xoigr")]
-position = Vector2(66, 18)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(80, 72)
@@ -280,7 +97,8 @@ position = Vector2(0, -9)
 shape = SubResource("WorldBoundaryShape2D_gnlbk")
 
 [connection signal="collided_with_top" from="Playfield/BoundaryTop" to="." method="_on_boundary_top_collided_with_top"]
-[connection signal="points_awarded" from="BlockManager" to="." method="_on_block_manager_points_awarded"]
+[connection signal="last_block_destroyed" from="LevelManager" to="." method="_on_level_manager_last_block_destroyed"]
+[connection signal="points_awarded" from="LevelManager" to="." method="_on_level_manager_points_awarded"]
 [connection signal="ball_out" from="BallDespawner" to="." method="_on_ball_despawner_ball_out"]
 [connection signal="body_entered" from="BallDespawner" to="BallDespawner" method="_on_body_entered"]
 

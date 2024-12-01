@@ -4,7 +4,8 @@ extends Node
 enum GameMode {
 	NORMAL = 10,
 	HECTIC = 20,
-	GAME_OVER = 50,
+	GAME_WON = 50,
+	GAME_OVER = 60,
 }
 
 
@@ -24,6 +25,8 @@ var _game_mode = GameMode.NORMAL:
 			GameMode.HECTIC:
 				%BallManager.ball_mode = %BallManager.BallMode.FAST
 				%Paddle.paddle_mode = %Paddle.PaddleMode.SHORT
+			GameMode.GAME_WON:
+				print("You won! You got %s points!" % _score) # TODO
 			GameMode.GAME_OVER:
 				print("You got %s points!" % _score) # TODO
 
@@ -80,5 +83,9 @@ func _on_ball_despawner_ball_out():
 		_game_mode = GameMode.NORMAL
 
 
-func _on_block_manager_points_awarded(points):
+func _on_level_manager_points_awarded(points):
 	_score += points
+
+
+func _on_level_manager_last_block_destroyed():
+	_game_mode = GameMode.GAME_WON
