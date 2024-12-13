@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://be7x0dknveceg"]
+
+[ext_resource type="Script" path="res://levels/level_manager.gd" id="1_dyquj"]
+
+[node name="LevelManager" type="Node2D"]
+position = Vector2(80, 24)
+script = ExtResource("1_dyquj")
+level_position = Vector2(0, 9)

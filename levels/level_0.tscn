@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsp11nhr1vmrp"]
+
+[ext_resource type="PackedScene" uid="uid://4cpbd2ffluyg" path="res://block/block.tscn" id="1_nkkgk"]
+
+[node name="Level0" type="Node2D"]
+
+[node name="Block" parent="." instance=ExtResource("1_nkkgk")]
+position = Vector2(-66, -9)
+
+[node name="Block2" parent="." instance=ExtResource("1_nkkgk")]
+position = Vector2(-54, -9)
+
+[node name="Block3" parent="." instance=ExtResource("1_nkkgk")]
+position = Vector2(-42, -9)
+
+[node name="Block4" parent="." instance=ExtResource("1_nkkgk")]
+position = Vector2(-30, -9)
+
+[node name="Block5" parent="." instance=ExtResource("1_nkkgk")]
+position = Vector2(-18, -9)
+
+[node name="Block6" parent="." instance=ExtResource("1_nkkgk")]
+position = Vector2(-6, -9)
+
+[node name="Block7" parent="." instance=ExtResource("1_nkkgk")]
+position = Vector2(6, -9)
+
+[node name="Block8" parent="." instance=ExtResource("1_nkkgk")]
+position = Vector2(18, -9)
+
+[node name="Block9" parent="." instance=ExtResource("1_nkkgk")]
+position = Vector2(30, -9)
+
+[node name="Block10" parent="." instance=ExtResource("1_nkkgk")]
+position = Vector2(42, -9)
+
+[node name="Block11" parent="." instance=ExtResource("1_nkkgk")]
+position = Vector2(54, -9)
+
+[node name="Block12" parent="." instance=ExtResource("1_nkkgk")]
+position = Vector2(66, -9)
