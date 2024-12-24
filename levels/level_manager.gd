@@ -36,7 +36,10 @@ func set_level(level_index):
 
 	var blocks = level.get_children().filter(
 		func (child):
-			var child_signals = child.get_signal_list().map(func(signal_dict): return signal_dict.name)
+			var child_signals = child\
+			.get_signal_list()\
+			.map(func(signal_dict): return signal_dict.name)
+			
 			return child_signals.has("points_awarded")
 	)
 

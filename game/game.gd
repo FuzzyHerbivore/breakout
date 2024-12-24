@@ -58,10 +58,10 @@ func _reset_game():
 	%LevelManager.set_level(0)
 	_score = 0
 	_extra_lives = extra_lives_start
-	_reset_level()
+	_reset_try()
 
 
-func _reset_level():
+func _reset_try():
 	_game_mode = GameMode.NORMAL
 	%Paddle.position = _paddle_start_position
 
